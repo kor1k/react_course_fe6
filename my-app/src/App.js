@@ -13,7 +13,7 @@ function App() {
     return (
         <>
             <Header/>
-            <Button/>
+            <Button buttonTitle="Add some value" valueName="clicks"/>
             <Content/>
             <Footer/>
         </>

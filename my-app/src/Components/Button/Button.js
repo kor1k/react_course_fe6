@@ -1,6 +1,7 @@
 import React from 'react'
 
 // Functional Component
+
 // const MyButton = () => {
 //     return (
 //         <div className="button-holder">
@@ -9,33 +10,29 @@ import React from 'react'
 //     );
 // };
 
-// state component (MAYBE)
+// state and props
 class MyButton extends React.Component {
     state = {
         counter: 0,
     };
 
     handleClick = () => {
-        let addVal = 5;
+        let addVal = 1;
         console.warn('CLICKED');
         this.setState({
             counter: this.state.counter + addVal
         });
-
-        // this.setState(function (state) {
-        //     return {
-        //         counter: state.counter + 1
-        //     }
-        // })
-
     };
 
     render() {
+        const {counter} = this.state;
+        const {buttonTitle, valueName} = this.props;
+        // const {valueName} = this.props;
         return (
             <div className="button-holder">
-                <button onClick={this.handleClick}>Click me!</button>
+                <button onClick={this.handleClick}>{buttonTitle}</button>
                 <p>
-                    Current value: {this.state.counter}
+                    Current value: {counter} {valueName}
                 </p>
             </div>
         )
